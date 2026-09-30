@@ -1,0 +1,1 @@
+ALTER TABLE stmt_assessment_devices DROP COLUMN deposit_above_avg_balance;

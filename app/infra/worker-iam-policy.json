@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadRawEmails",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::cellipay-mpesa-statements-ACCOUNT_ID/inbound/*"
+    },
+    {
+      "Sid": "Attachments",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::cellipay-mpesa-statements-ACCOUNT_ID/attachments/*"
+    },
+    {
+      "Sid": "Queue",
+      "Effect": "Allow",
+      "Action": ["sqs:ReceiveMessage", "sqs:DeleteMessage", "sqs:ChangeMessageVisibility", "sqs:GetQueueAttributes"],
+      "Resource": "arn:aws:sqs:eu-west-1:ACCOUNT_ID:cellipay-statements"
+    },
+    {
+      "Sid": "S3Kms",
+      "Effect": "Allow",
+      "Action": ["kms:Decrypt", "kms:GenerateDataKey"],
+      "Resource": "*",
+      "Condition": {"StringEquals": {"kms:ViaService": "s3.eu-west-1.amazonaws.com"}}
+    }
+  ]
+}
