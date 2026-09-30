@@ -1,5 +1,133 @@
+# ============================================
+# Python
+# ============================================
 __pycache__/
-.env
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# ============================================
+# Virtual environments
+# ============================================
 .venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ============================================
+# Environment & secrets (never push)
+# ============================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials*.json
+service-account*.json
+
+# ============================================
+# Testing & coverage
+# ============================================
 .pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.hypothesis/
 tests/private/
+
+# ============================================
+# Type checkers & linters
+# ============================================
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================
+# Docker (kept local only)
+# ============================================
+Dockerfile
+Dockerfile.*
+*.dockerfile
+.dockerignore
+docker-compose*.yml
+docker-compose*.yaml
+compose*.yml
+compose*.yaml
+
+# ============================================
+# Scripts & deployment (kept local only)
+# ============================================
+scripts/
+*.sh
+*.bat
+*.ps1
+Makefile
+Procfile
+deploy/
+deployment/
+deployments/
+infra/
+k8s/
+kubernetes/
+helm/
+.github/workflows/
+*.tf
+*.tfvars
+*.tfstate
+*.tfstate.*
+.terraform/
+ecosystem.config.js
+appspec.yml
+buildspec.yml
+
+# ============================================
+# Logs, data & local DBs
+# ============================================
+*.log
+logs/
+*.sqlite
+*.sqlite3
+*.db
+uploads/
+tmp/
+temp/
+
+# ============================================
+# Jupyter
+# ============================================
+.ipynb_checkpoints/
+
+# ============================================
+# IDE / editor
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# OS junk
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini
